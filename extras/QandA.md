@@ -1,3 +1,10 @@
 # Q and A
 
-    cursophp
+
+    tarea marcos 
+        armar Slack
+        pasar ps-r
+        extenisones VSC
+    
+
+    
