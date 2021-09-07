@@ -29,7 +29,6 @@
 
 ## Recursos
 
-    Manual Oficial de PHP https://www.php.net
-    Stack Overflow https://stackoverflow.com/questions/tagged/php
+> Manual Oficial de PHP https://www.php.net  
+> Stack Overflow https://stackoverflow.com/questions/tagged/php  
 
-    
