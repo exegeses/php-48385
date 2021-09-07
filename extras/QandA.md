@@ -1,5 +1,7 @@
 # Q and A
 
+    tarea alumnos 
+        leer forms
 
     tarea marcos 
         armar Slack

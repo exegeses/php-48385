@@ -17,6 +17,5 @@
 <?php
     echo $numero * 3;
     echo '<br>';
-    //echo NOMBRE, ' ', APELLIDO;
-    echo NOMBRE + APELLIDO;
+    echo NOMBRE, ' ', APELLIDO;
 ?>
