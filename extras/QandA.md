@@ -1,12 +1,11 @@
 # Q and A
 
-    tarea alumnos 
-        leer forms
 
+    Tu nombre es: NNNN
+    Tu email es: EEEE
+    
     tarea marcos 
-        armar Slack
-        pasar ps-r
-        extenisones VSC
-    
+        Info EAP
 
-    
+
+    Curso de PHP y mySQL 48385
