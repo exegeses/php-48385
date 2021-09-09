@@ -11,12 +11,33 @@
 <?php
     $numero = $_POST['numero'];
     if( $numero < 100 ){
-        echo 'es menor';
+        echo '<img src="imagenes/ok.png">';
     }else{
-        echo 'no es menor';
+        echo '<img src="imagenes/error.png">';
     }
 ?>
-
+<hr>
+<?php
+    $numero = $_POST['numero'];
+    if( $numero < 100 ){
+?>
+       <img src="imagenes/ok.png">
+<?php
+    }else{
+?>
+       <img src="imagenes/error.png">
+<?php
+    }
+?>
+<hr>
+<?php
+    $numero = $_POST['numero'];
+    $img = 'error'; // predeterminado
+    if( $numero < 100 ){
+        $img = 'ok';
+    }
+?>
+    <img src="imagenes/<?= $img; ?>.png">
 
 </body>
 </html>

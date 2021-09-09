@@ -1,8 +1,11 @@
 # Q and A
 
+    <?php 
+        echo 'hola';
+    ?>
+    
 
-    Tu nombre es: NNNN
-    Tu email es: EEEE
+    <?= 'hola'; ?>
     
     tarea marcos 
         Info EAP
