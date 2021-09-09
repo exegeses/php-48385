@@ -1,11 +1,6 @@
 # Q and A
 
-    <?php 
-        echo 'hola';
-    ?>
     
-
-    <?= 'hola'; ?>
     
     tarea marcos 
         Info EAP
