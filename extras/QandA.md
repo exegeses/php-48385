@@ -1,7 +1,7 @@
 # Q and A ☑️
     
     tarea 
-        hacer lo mismo que bucles.php pero con bucle for
+        
 
     Curso de PHP y mySQL 48385
 
