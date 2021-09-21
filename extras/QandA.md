@@ -1,16 +1,18 @@
 # Q and A ☑️
 
-
-        phpMyAdmin
-
-        PostGreSQL 
-        mariaDB         transact SQL
-        ORACLE  ---- mySQL
+    tarea:  adminCategorias
 
 
-        SQL  Structured Query Language    
+    phpMyAdmin
 
-        SQL SERVER
+    PostGreSQL 
+    mariaDB         transact SQL
+    ORACLE  ---- mySQL
+
+
+    SQL  Structured Query Language    
+
+    SQL SERVER
 
 
 
