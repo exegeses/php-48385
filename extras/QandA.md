@@ -1,6 +1,5 @@
 # Q and A ☑️
-    
-    tarea 
+
 
         phpMyAdmin
 
