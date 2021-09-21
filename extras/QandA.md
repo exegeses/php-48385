@@ -1,6 +1,18 @@
 # Q and A ☑️
     
     tarea 
+
+        phpMyAdmin
+
+        PostGreSQL 
+        mariaDB         transact SQL
+        ORACLE  ---- mySQL
+
+
+        SQL  Structured Query Language    
+
+        SQL SERVER
+
         
 
     Curso de PHP y mySQL 48385
