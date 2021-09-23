@@ -1,9 +1,10 @@
 # Q and A ☑️
 
+    Control  de errores
+    
+    Fatal error: Uncaught TypeError: mysqli_fetch_assoc(): 
+    Argument #1 ($result) must be of type mysqli_result, bool given
 
-    mysqli_fetch_assoc()
-
-    tarea:  
 
 
     Curso de PHP y mySQL 48385

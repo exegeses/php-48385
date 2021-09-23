@@ -1,7 +1,7 @@
 <?php
     //require 'config/config.php';
-    include "funciones/conexion.php";
-    include "funciones/marcas.php";
+    require "funciones/conexion.php";
+    require "funciones/marcas.php";
     $marcas = listarMarcas();
 	include 'includes/header.html';  
 	include 'includes/nav.php';  
