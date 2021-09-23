@@ -1,19 +1,9 @@
 # Q and A ☑️
 
-    tarea:  adminCategorias
 
+    mysqli_fetch_assoc()
 
-    phpMyAdmin
-
-    PostGreSQL 
-    mariaDB         transact SQL
-    ORACLE  ---- mySQL
-
-
-    SQL  Structured Query Language    
-
-    SQL SERVER
-
+    tarea:  
 
 
     Curso de PHP y mySQL 48385
