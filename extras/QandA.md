@@ -1,28 +1,9 @@
 # Q and A ☑️
 
-    tarea: adminUsuarios
-           terminar vista reporte agregarMarca
-           agregarCategoria
-    
-        
-    INSERT INTO table
-                ( campo2, campo4, campo5 )
-            VALUE
-                ( vCampo2, vCampo4, vCampo5 )
 
-    "INSERT INTO marcas 
-                ( mkNombre ) 
-            VALUE 
-                ( 'Hermes' )"
-
----
-
-    INSERT INTO table
-            VALUE ( vCampo1, vCampo2, vCampo3, vCampo4, vCampo5 )
-
-    INSERT INTO marcas 
-            VALUE ( DEFAULT, 'Hermes' )
-
+    UPDATE marcas
+        SET mkNombre = 'Hermes'
+        WHERE idMarca = 18
 
     Curso de PHP y mySQL 48385
 
