@@ -65,7 +65,22 @@
         $prdStock = $_POST['prdStock'];
         //subir imagen *
         $prdImagen = subirImagen();
-        echo $prdImagen;
+
+        $link = conectar();
+        $sql = "INSERT INTO productos 
+                        VALUES( 
+                                DEFAULT, 
+                               '".$prdNombre."',
+                               ".$prdPrecio.", 
+                               ".$idMarca.", 
+                               ".$idCategoria.", 
+                               '".$prdPresentacion."', 
+                               ".$prdStock.", 
+                               '".$prdImagen."'
+                              )";
+        $resultado = mysqli_query( $link, $sql )
+                                or die( mysqli_error( $link ) );
+        return $resultado;
     }
     function modificarProducto()
     {}
