@@ -41,7 +41,7 @@
             <?php
                 while ( $marca = mysqli_fetch_assoc( $marcas ) ){
             ?>
-                        <option value="<?= $marca['idMarca'] ?>"><?= $marca['mkNombre'] ?></option>
+                        <option <?= ( $producto['idMarca'] == $marca['idMarca'] ) ? 'selected' : '' ?> value="<?= $marca['idMarca'] ?>"><?= $marca['mkNombre'] ?></option>
             <?php
                 }
             ?>
@@ -55,7 +55,7 @@
     <?php
                 while ( $categoria = mysqli_fetch_assoc($categorias) ) {    
     ?>
-                        <option value="<?= $categoria['idCategoria'] ?>"><?= $categoria['catNombre'] ?></option>
+                        <option <?= ( $producto['idCategoria'] == $categoria['idCategoria'] ) ? 'selected' : '' ?> value="<?= $categoria['idCategoria'] ?>"><?= $categoria['catNombre'] ?></option>
     <?php
                 }
     ?>                
@@ -75,10 +75,20 @@
                            class="form-control" id="prdStock" min="0" required>
                 </div>
 
+                Imagen actual: <br>
+                <img src="productos/<?= $producto['prdImagen'] ?>" class="img-thumbnail m-3">
+                <br>
+
+                Modificar imagen (opcional) <br>
                 <div class="form-group mt-1 mb-4">
                     <label for="formFile" class="form-label">Seleccionar archivo:</label>
                     <input type="file" name="prdImagen" class="form-control" id="formFile">
                 </div>
+
+                <input type="hidden" name="idProducto"
+                       value="<?= $producto['idProducto'] ?>">
+                <input type="hidden" name="imgActual"
+                       value="<?= $producto['prdImagen'] ?>">
 
                 <button class="btn btn-dark px-4">Modificar producto</button>
                 <a href="adminProductos.php" class="btn btn-outline-secondary">

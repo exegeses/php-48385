@@ -51,8 +51,13 @@
 
     function subirImagen()
     {
-        //si no enviaron imagen
+        //si no enviaron imagen en ALTA
         $prdImagen = 'noDisponible.jpg';
+
+        //si no enviaron imagen en MODIFICACIÓN
+        if( isset($_POST['imgActual']) ){
+            $prdImagen = $_POST['imgActual'];
+        }
 
         // enviaron imagen y está todo ok
         if( $_FILES['prdImagen']['error'] == 0 ){
@@ -100,7 +105,31 @@
         return $resultado;
     }
     function modificarProducto()
-    {}
+    {
+        $prdNombre = $_POST['prdNombre'];
+        $prdPrecio = $_POST['prdPrecio'];
+        $idMarca = $_POST['idMarca'];
+        $idCategoria = $_POST['idCategoria'];
+        $prdPresentacion = $_POST['prdPresentacion'];
+        $prdStock = $_POST['prdStock'];
+        $prdImagen = subirImagen();
+        $idProducto = $_POST['idProducto'];
+
+        $link= conectar();
+        $sql = "UPDATE productos 
+                    SET 
+                        prdNombre       = '".$prdNombre."', 
+                        prdPrecio       = ".$prdPrecio.", 
+                        idMarca         = ".$idMarca.", 
+                        idCategoria     = ".$idCategoria.",
+                        prdPresentacion = '".$prdPresentacion."', 
+                        prdStock        = ".$prdStock.", 
+                        prdImagen       = '".$prdImagen."'
+                    WHERE idProducto    = ".$idProducto;
+        $resultado = mysqli_query($link, $sql)
+                            or die(mysqli_error($link));
+        return $resultado;
+    }
     function eliminarProducto()
     {}
 
