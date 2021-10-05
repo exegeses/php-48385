@@ -31,8 +31,42 @@
 
     function verProductoPorID()
     {}
+
+    function subirImagen()
+    {
+        //si no enviaron imagen
+        $prdImagen = 'noDisponible.jpg';
+
+        // enviaron imagen y está todo ok
+        if( $_FILES['prdImagen']['error'] == 0 ){
+            //ruta para guardar
+            $path = 'productos/';
+            //nombre y ubicación temporal
+            $temp = $_FILES['prdImagen']['tmp_name'];
+            // renombrar archivo
+                //time() + extension
+            $extension = pathinfo( $_FILES['prdImagen']['name'], PATHINFO_EXTENSION );
+            $prdImagen = time().'.'.$extension;
+
+            //movemos archivo
+            move_uploaded_file( $temp, $path.$prdImagen );
+        }
+        return $prdImagen;
+    }
+
     function agregarProducto()
-    {}
+    {
+        //capturamos datos enviados por el form
+        $prdNombre = $_POST['prdNombre'];
+        $prdPrecio = $_POST['prdPrecio'];
+        $idMarca = $_POST['idMarca'];
+        $idCategoria = $_POST['idCategoria'];
+        $prdPresentacion = $_POST['prdPresentacion'];
+        $prdStock = $_POST['prdStock'];
+        //subir imagen *
+        $prdImagen = subirImagen();
+        echo $prdImagen;
+    }
     function modificarProducto()
     {}
     function eliminarProducto()
