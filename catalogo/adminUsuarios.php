@@ -1,5 +1,8 @@
 <?php
-    //require 'config/config.php';
+
+    require 'funciones/conexion.php';
+    require 'funciones/usuarios.php';
+    $usuarios = listarUsuarios();
 	include 'includes/header.html';  
 	include 'includes/nav.php';  
 ?>
@@ -7,8 +10,7 @@
     <main class="container">
         <h1>Panel de administración de usuarios</h1>
 
-        <a href="admin.php" class="btn btn-outline-secondary btn-sm my-2">
-            <i class="bi bi-chevron-left"></i>
+        <a href="admin.php" class="btn btn-outline-secondary my-2">
             Volver a dashboard
         </a>
 
@@ -20,37 +22,39 @@
                     <th>Apellido</th>
                     <th>Email</th>
                     <th colspan="2">
-                        <a href="" class="btn btn-outline-secondary btn-sm">
-                            <i class="bi bi-plus-square"> </i>
+                        <a href="formAgregarUsuario.php" class="btn btn-outline-secondary">
                             Agregar
                         </a>
                     </th>
                 </tr>
             </thead>
             <tbody>
+<?php
+            while ( $usuario = mysqli_fetch_assoc( $usuarios ) ) {
+?>
                 <tr>
-                    <td>1</td>
-                    <td>nombre</td>
-                    <td>apellido</td>
-                    <td>email@mail.com</td>
+                    <td><?= $usuario['idUsuario'] ?></td>
+                    <td><?= $usuario['usuNombre'] ?></td>
+                    <td><?= $usuario['usuApellido'] ?></td>
+                    <td><?= $usuario['usuEmail'] ?></td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary btn-sm">
-                            <i class="bi bi-pencil-square"> </i>
+                        <a href="formModificarUsuario.php?idUsuario=<?= $usuario['idUsuario'] ?>" class="btn btn-outline-secondary">
                             Modificar
                         </a>
                     </td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary btn-sm">
-                            <i class="bi bi-dash-square"> </i>
+                        <a href="formEliminarUsuario.php?idUsuario=<?= $usuario['idUsuario'] ?>" class="btn btn-outline-secondary">
                             Eliminar
                         </a>
                     </td>
                 </tr>
+<?php
+            }
+?>
             </tbody>
         </table>
 
-        <a href="admin.php" class="btn btn-outline-secondary btn-sm my-2">
-            <i class="bi bi-chevron-left"></i>
+        <a href="admin.php" class="btn btn-outline-secondary my-2">
             Volver a dashboard
         </a>
 
