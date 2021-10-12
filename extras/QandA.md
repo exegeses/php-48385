@@ -4,7 +4,7 @@
 
     Curso de PHP y mySQL 48385
 
-    encriptado  bcrypt
+    encriptado  bcrypt256   60
 
     index (si no estamos logueados)
     login 
