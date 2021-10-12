@@ -1,11 +1,12 @@
 # Q and A ☑️
 
-    avanzar el de usuarios
+    Sesiones
 
     Curso de PHP y mySQL 48385
 
-    encriptado  bcrypt256   60
 
+
+falta
+    login
     index (si no estamos logueados)
-    login 
     
