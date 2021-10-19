@@ -17,7 +17,8 @@
         
         <div class="dropdown">
         <button class="btn btn-dark dropdown-toggle px-3" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Nombre Apellido
+                <?= $_SESSION['usuNombre'] ?>
+                <?= $_SESSION['usuApellido'] ?>
         </button>
             <div class="dropdown-menu bg-dark bg-opacity-75" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item bg-dark py-2" href="logout.php">
