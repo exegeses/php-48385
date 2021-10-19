@@ -64,3 +64,34 @@
                     or die(mysqli_error($link));
         return $resultado;
     }
+
+    function modificarClave()
+    {
+        //clave actual sin encriptar
+        $usuPass = $_POST['usuPass'];
+        /** obtenemos clave encriptada de la bdd **/
+        $link = conectar();
+        $sql = "SELECT usuPass 
+                    FROM usuarios
+                    WHERE idUsuario = ".$_SESSION['idUsuario'];
+        $resultado = mysqli_query( $link, $sql )
+                            or die( mysqli_error($link) );
+        //clave encriptada en bdd
+        $pHash = mysqli_fetch_assoc( $resultado );
+        if ( password_verify( $usuPass, $pHash['usuPass'] ) ){
+            // si coinciden:
+                //encriptar nueva clave newPass
+            $newPass = $_POST['newPass'];
+            $newPassHash = password_hash($newPass, PASSWORD_DEFAULT);
+                //hacer update
+            $sql = "UPDATE usuarios
+                        SET usuPass = '".$newPassHash."'
+                        WHERE idUsuario = ".$_SESSION['idUsuario'];
+            $resultado = mysqli_query( $link, $sql )
+                            or die( mysqli_error($link) );
+            return $resultado;
+        }
+        //si no coinciden
+        header('location: formModificarClave.php?error=1');
+        return;
+    }

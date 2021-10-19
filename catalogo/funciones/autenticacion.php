@@ -5,7 +5,7 @@
         $usuEmail = $_POST['usuEmail'];
         $usuPass = $_POST['usuPass'];
         $link = conectar();
-        $sql = "SELECT usuNombre, usuApellido, usuPass 
+        $sql = "SELECT idUsuario, usuNombre, usuApellido, usuPass 
                     FROM usuarios
                     WHERE usuEmail = '".$usuEmail."'";
         $resultado = mysqli_query( $link, $sql )
@@ -32,6 +32,7 @@
             #obtenemos y registramos nombre y apellido del usuario
             $_SESSION['usuNombre'] = $usuario['usuNombre'];
             $_SESSION['usuApellido'] = $usuario['usuApellido'];
+            $_SESSION['idUsuario'] = $usuario['idUsuario'];
 
             //redirección a admin
             header( 'location: admin.php' );
