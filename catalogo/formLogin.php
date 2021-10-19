@@ -26,9 +26,14 @@
 
 <?php
         if ( isset( $_GET['error'] ) ){
+            $error = $_GET['error'];
+            $mensaje = 'Debe loguearse para utilizar nuestros sevicios';
+            if($error == 1){
+                $mensaje = 'Nombre usuario y/o contraseña incorrectos';
+            }
 ?>
         <div class="alert alert-danger col-8 mx-auto">
-            Nombre y/o contaseña incorrectas
+            <?= $mensaje ?>
         </div>
 <?php
         }
