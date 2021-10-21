@@ -29,7 +29,41 @@
         return $resultado;
     }
 
-    function verProductoPorID()
+    function buscarProductos()
+    {
+        $link = conectar();
+        $idCategoria = 0;
+        $criterio = '';
+        if ( isset( $_GET['idCategoria'] ) ){
+            $idCategoria = $_GET['idCategoria'];
+        }
+        if ( isset( $_GET['criterio'] ) ){
+            $criterio = $_GET['criterio'];
+        }
+        $sql = "SELECT idProducto, prdNombre, prdPrecio,
+                           p.idMarca, mkNombre, 
+                           p.idCategoria, catNombre, 
+                           prdPresentacion, prdImagen
+                        FROM productos p
+                        JOIN marcas m
+                            ON p.idMarca = m.idMarca
+                        JOIN categorias c
+                            ON p.idCategoria = c.idCategoria";
+        $filtroCriterio = " WHERE prdNombre LIKE '%".$criterio."%'";
+        $sql .= $filtroCriterio; // concatenamos filtro para buscar por nombre
+        $filtroCategoria = "";
+        if( $idCategoria != 0 ){
+            $filtroCategoria = " AND p.idCategoria = ".$idCategoria;
+        }
+        $sql .= $filtroCategoria;
+
+        $resultado = mysqli_query($link, $sql)
+        or die( mysqli_error( $link ) );
+        return $resultado;
+    }
+
+
+function verProductoPorID()
     {
         $idProducto = $_GET['idProducto'];
         $link = conectar();
